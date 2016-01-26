@@ -1,0 +1,145 @@
+
+textarea.form-control {
+  height: 100%;
+  display: inline;
+}
+
+body{
+  margin-top: 50px;
+  padding-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 10px;
+  background-color: gray;
+}
+
+.uncheckedLabel{
+  background-color: #cce5ff;
+  color: #003d80;
+  display: inline-block;
+  padding-top: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 3px;
+  border-radius: 5px;
+  text-decoration: line-through;
+}
+ 
+.checkedLabel {
+  background-color: #3399FF;
+  color: black;
+  display: inline-block;
+  padding-top: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 3px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.checkbox{
+  display: none;
+
+}
+
+.navbar {
+  margin-bottom: 10px;
+}
+
+.logo{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  clear: both;
+}
+
+.intro{
+  margin-top:10px;
+}
+
+textarea{ 
+  width: 50%;
+  max-width: 550px;
+  min-width:100px;
+
+  height:100px; 
+  min-height:100px;  
+  max-height:300px;
+  resize: none;
+}
+
+.navbar-logo{
+  margin-top: -10px;
+  margin-bottom: 20px;
+  width: 180px;
+  height: 40px;
+  /*background-size: 180px 40px;*/
+  background-image: url("/img/songstackerlogo.svg");
+  background-repeat: no-repeat;
+  color: transparent;
+  background-color: transparent;
+  border:0;
+  float: left;
+}
+
+input.form-control {
+  max-width: 600px;
+  display:inline;
+  margin:5px;
+}
+
+div.playlistcontainer{
+  width: 100%;
+  max-width: 300px;
+}
+
+div.artist{
+  color: #333;
+  font-size: 12px;
+}
+
+div.title{
+  color: white;
+  border-bottom: 1px solid #333;
+}
+
+div.atrack{
+  margin: 1px;
+}
+
+.playlist{
+  width:100%;
+}
+
+.navbar-inverse .navbar-nav .active a{
+  color: #3399FF;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar, .navbar-toggle .icon-bar{
+  background-color: #3399FF;
+}
+
+.marginator{
+  margin-left: auto;
+}
+
+.mylinks{
+  color:#333
+}
+
+.contact{
+  width: 400px;
+}
+
+div.aborder{
+  border-bottom: 2px solid #3399FF;
+  padding-bottom: 20px;
+  max-width: 400px;
+}
+
+.fb-like{
+  margin-top: 20px;
+}
+
+.playlistbutton{
+  width:140px;
+}

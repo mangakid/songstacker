@@ -49,7 +49,7 @@
       <div class="main" ng-controller="HomeController">
         <div class="container aborder">
           <div class="form-group">
-            <h3 ng-show="isLoggedIn()">Logged In :)</h3>
+
             <h3 class = "intro">Find artists, make playlists.</h3>
             
               <button type="submit" class="btn btn-default" ng-click="searchFor()">Search for Artists</button>
@@ -81,19 +81,22 @@
             <label>Allow tracks marked as explicit?
               <input type="checkbox" ng-model="checkboxModel.explicit">
             </label><br/>
-            <button class="btn btn-default" type="submit" ng-click="logIn()" ng-show="!isLoggedIn()">Log In</button>
-            <button class="btn btn-default" type="submit" ng-click="makePlaylist()" ng-show="isLoggedIn()" >Make playlist</button>
+            <button class="btn btn-default" type="submit" ng-click="makePlaylist()">Make playlist</button>
             <p></p>
             <button type="submit" class="btn btn-default" ng-click="openPlaylist()" ng-show="artistTracks.length > 0">Open playlist</button>
-            <button type="submit" class="btn btn-default" ng-click="tweetPlaylist()" ng-show="artistTracks.length > 0">Tweet playlist</button>
-            <h1 class="top" ng-show="artistTracks.length > 0">
-              Your Playlist:
-            </h1>
-            <div class="playlist">
-              <div class = "tracksByArtist" ng-repeat = "anArtistsTracks in artistTracks track by $index">
-                <div class = "aTrack" ng-repeat = "aTrack in anArtistsTracks track by $index">
-                  <div class="title">{{aTrack.title}}
-                    <div class="artist">{{aTrack.artist}}
+
+            <div class="playlistContainer">
+              <div class="scrollableContent">
+                <h1 class="top" ng-show="artistTracks.length > 0">
+                  Your Playlist:
+                </h1>
+                <div class="playlist">
+                  <div class = "tracksByArtist" ng-repeat = "anArtistsTracks in artistTracks track by $index">
+                    <div class = "aTrack" ng-repeat = "aTrack in anArtistsTracks track by $index">
+                      <div class="title">{{aTrack.title}}
+                        <div class="artist">{{aTrack.artist}}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

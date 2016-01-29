@@ -71,7 +71,9 @@ app.factory('spotifycalls', ['$http', '$q', 'auth', function($http, $q, auth){
 			    })
 			    .catch(function (error) {
 			        console.log("failed to add tracks: " + JSON.stringify(error));
-
+			        if(error.data.error.status === '429'){
+			        	alert("Too many requests, try again in a few minutes");
+			        }
 			    })
 			}
 		},

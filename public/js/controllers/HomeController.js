@@ -347,6 +347,24 @@ app.controller('HomeController', ['$scope', '$http', 'auth', 'spotifycalls', '$q
 
   $scope.makePlaylist = function(){
 
+    if(!$scope.isLoggedIn()){
+      playlistservice.setWaiting(true);
+      var p = $scope.logIn();
+    }
+    else{
+      continueMakingPlaylist();
+    }
+  }
+
+  $scope.$on('readyToMakePlaylist', function(event) {
+    console.log("emit received from app controller, continuing making playlist");
+    continueMakingPlaylist();
+  });
+
+  function continueMakingPlaylist(){
+
+    playlistservice.setWaiting(false);
+
     trackUrisArray =[];
     $scope.userId = auth.getStoredUserId();
     $scope.access_token = auth.getAccessToken();
@@ -389,10 +407,16 @@ app.controller('HomeController', ['$scope', '$http', 'auth', 'spotifycalls', '$q
     window.open(url);
   }
 
+  $scope.isLoggedIn = function(){
+    return (auth.getAccessToken() != '');
+  };
 
   $scope.logIn = function() {
+    var deferred = $q.defer();
     auth.setState();
     auth.login();
+    deferred.resolve();
+    return deferred.promise;
   }
 
 }]);

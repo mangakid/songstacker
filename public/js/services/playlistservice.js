@@ -1,9 +1,21 @@
 app.factory('playlistservice', ['spotifycalls', '$q', function(spotifycalls, $q){
+
+	var self = this;
+	self.getWaiting = false;
+
 	return {
 		getTracks: function(){
 			
 		},
 		
+		getWaiting: function(){
+			return self.getWaiting;
+		},
+
+		setWaiting: function(waiting){
+			self.getWaiting = waiting;
+		},
+
 		processRawTracks: function(data, numOfTracks, explicitAllowed){
 
 			var processedArray = [];

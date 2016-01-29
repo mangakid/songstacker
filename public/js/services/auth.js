@@ -14,7 +14,7 @@ app.factory('auth', ['$http', '$q', function($http, $q){
 
     var redirect_uri = window.location + "callback.html" ; // Your redirect uri
     var state = generateRandomString(16);
-    var client_id = '----';
+    var client_id = 'b7a7fb3b19bf490ca22a1f5a933b18a8';
     var stateKey = 'spotify_auth_state';
     var scope = 'user-read-private playlist-modify-private playlist-modify-public';
         
@@ -33,6 +33,7 @@ app.factory('auth', ['$http', '$q', function($http, $q){
     	},
 
     	login: function(){
+
         var width = 450,
             height = 730,
             left = (screen.width / 2) - (width / 2),
@@ -52,8 +53,7 @@ app.factory('auth', ['$http', '$q', function($http, $q){
         if ((new Date()).getTime() > expires) {
           return '';
         }
-        var token = window.sessionStorage.getItem('accessToken', '');
-        return token;
+        return window.sessionStorage.getItem('accessToken', '');
       },
 
       getStoredState: function(){
